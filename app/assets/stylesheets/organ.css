@@ -1,0 +1,30 @@
+div.organ {
+}
+
+div.organ:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.key {
+  position: relative;
+  box-sizing: border-box;
+  float: left;
+  width: 40px;
+  height: 150px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.pressed {
+  box-sizing: border-box;
+  color: red;
+  border: 5px solid #444;
+}
+
+.keyText {
+  position: absolute;
+  width: 100%;
+  bottom: 5px;
+}

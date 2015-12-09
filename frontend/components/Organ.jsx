@@ -11,7 +11,7 @@ var Organ = React.createClass({
       );
     });
     return (
-      <div>
+      <div className="organ">
         {keys}
       </div>
     );

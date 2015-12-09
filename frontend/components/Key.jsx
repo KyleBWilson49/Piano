@@ -30,9 +30,16 @@ var Key = React.createClass({
   },
 
   render: function () {
+    var hasAccidental = this.props.noteName.charAt(1) === "s" ;
+
+    var classes = this.state.isPressed ? "key pressed" : "key";
+    var text = this.props.noteName.charAt(0) + (hasAccidental ? "#" : "");
+
     return (
-      <div>
-        {this.props.noteName}
+      <div className={classes}>
+        <div className="keyText">
+          {text}
+        </div>
       </div>
     );
   }

@@ -13,7 +13,6 @@ KeyStore.find = function (noteName) {
 };
 
 KeyStore.__onDispatch = function (payload) {
-  console.log(KeyStore.all());
   switch (payload.actionType) {
     case "ADD_KEY":
       addKey(payload.noteName);
