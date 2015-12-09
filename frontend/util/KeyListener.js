@@ -2,9 +2,9 @@
 // var AppDispatcher = require('../dispatcher/Dispatcher');
 var KeyActions = require('../actions/KeyActions');
 
-$(function(){
 
-  var TONES = {
+$(function(){
+  var NOTES = {
     65 : "C4",
     87 : "Cs4",
     83 : "D4",
@@ -25,15 +25,13 @@ $(function(){
     222 : "F5"
   };
 
-
   $(document).on("keydown", function (e) {
     e.preventDefault();
-    KeyActions.keyPressed(TONES[e.key]);
+    KeyActions.keyPressed(NOTES[e.keyCode]);
   });
 
   $(document).on("keyup", function (e){
     e.preventDefault();
-    KeyActions.keyReleased(TONES[e.key]);
+    KeyActions.keyReleased(NOTES[e.keyCode]);
   });
-  
 });

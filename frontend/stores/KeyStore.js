@@ -8,7 +8,12 @@ KeyStore.all = function () {
   return _keys.slice();
 };
 
+KeyStore.find = function (noteName) {
+  return _keys.indexOf(noteName);
+};
+
 KeyStore.__onDispatch = function (payload) {
+  console.log(KeyStore.all());
   switch (payload.actionType) {
     case "ADD_KEY":
       addKey(payload.noteName);
@@ -20,8 +25,10 @@ KeyStore.__onDispatch = function (payload) {
 };
 
 var addKey = function (noteName) {
-  _keys.push(noteName);
-  KeyStore.__emitChange();
+  if (_keys.indexOf(noteName) === -1) {
+    _keys.push(noteName);
+    KeyStore.__emitChange();
+  }
 };
 
 var removeKey = function (noteName) {
