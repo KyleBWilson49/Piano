@@ -14,6 +14,13 @@ var KeyActions = {
       actionType: "REMOVE_KEY",
       noteName: note
     });
+  },
+
+  keysPlayed: function (keys) {
+    AppDispatcher.dispatch({
+      actionType: "PLAY_RECORDED_KEYS",
+      keys: keys
+    });
   }
 };
 

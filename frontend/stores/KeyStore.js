@@ -20,6 +20,9 @@ KeyStore.__onDispatch = function (payload) {
     case "REMOVE_KEY":
       removeKey(payload.noteName);
       break;
+    case "PLAY_RECORDED_KEYS":
+      playRecordedKeys(payload.keys);
+      break;
   }
 };
 
@@ -33,6 +36,11 @@ var addKey = function (noteName) {
 var removeKey = function (noteName) {
   var toRemove = _keys.indexOf(noteName);
   _keys.splice(toRemove, 1);
+  KeyStore.__emitChange();
+};
+
+var playRecordedKeys = function (keys) {
+  _keys = keys;
   KeyStore.__emitChange();
 };
 
